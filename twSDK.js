@@ -18,13 +18,14 @@ window.WorldData = {
 				return data_response;
 			} catch (e) {throw 'error fetching villages data'}
 		}
+	},
+	
+	// Utils: convert csv + url encoded format to array
+	parseCsvToArray: function (csvData) {
+		const rows = csvData.trim().split('\n');
+        	return rows.map(row => {
+        		return row.split(',').map(field => decodeURIComponent(field));
+        	});
 	}
 }
 
-// Utils: convert csv + url encoded format to array
-function parseCsvToArray(csvData) {
-	const rows = csvData.trim().split('\n');
-        return rows.map(row => {
-        	return row.split(',').map(field => decodeURIComponent(field));
-        });
-}
