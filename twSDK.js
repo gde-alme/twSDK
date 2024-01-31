@@ -1,5 +1,5 @@
 // World Data Module
-export class WorldData {
+window.WorldData = class WorldData {	
 	const available_urls = ['/map/village.txt','/map/player.txt','/map/ally.txt'];
 
 	static async fetchWorldData(target = "") {
