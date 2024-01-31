@@ -1,3 +1,11 @@
+// Utils: convert csv + url encoded format to array
+function parseCsvToArray(csvData) {
+	const rows = csvData.trim().split('\n');
+        return rows.map(row => {
+        	return row.split(',').map(field => decodeURIComponent(field));
+        });
+}
+
 // World Data Module
 export class WorldData {
 	const available_urls = ['/map/village.txt','/map/player.txt','/map/ally.txt'];
@@ -21,12 +29,3 @@ export class WorldData {
 		}
 	}
 }
-
-// Utils: convert csv + url encoded format to array
-function parseCsvToArray(csvData) {
-	const rows = csvData.trim().split('\n');
-        return rows.map(row => {
-        	return row.split(',').map(field => decodeURIComponent(field));
-        });
-}
-
