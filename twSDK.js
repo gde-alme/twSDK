@@ -1,8 +1,7 @@
 // World Data Module
-window.WorldData = class WorldData {	
-	const available_urls = ['/map/village.txt','/map/player.txt','/map/ally.txt'];
-
-	static async fetchWorldData(target = "") {
+window.WorldData = {	
+	available_urls: ['/map/village.txt','/map/player.txt','/map/ally.txt'],
+	fetchWorldData: function(target = "") {
 		if (target === 'village') {
 			try {
 				const response = await jQuery.ajax(available_urls[0]);
