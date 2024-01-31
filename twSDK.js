@@ -1,6 +1,5 @@
-var hello = 'ola'
-/*
-// World Data Module
+console.log('ola')
+/*// World Data Module
 window.WorldData = {	
 	available_urls: ['/map/village.txt','/map/player.txt','/map/ally.txt'],
 	fetchWorldData: function(target = "") {
